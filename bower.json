@@ -4,7 +4,10 @@
     "James Meyer <james@swiftgrid.io>"
   ],
   "description": "A better credit card form in one line of code for angular js",
-  "main": "dest/ui-card.js",
+  "main": [
+    "dest/ui-card.js",
+    "dest/ui"
+  ],
   "keywords": [
     "card",
     "credit",
