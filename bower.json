@@ -1,6 +1,6 @@
 {
   "name": "ui.card",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "James Meyer <james@swiftgrid.io>"
   ],
@@ -12,10 +12,7 @@
   "keywords": [
     "card",
     "credit",
-    "card",
-    "angular",
-    "js",
-    "credit",
+    "form",
     "angularjs"
   ],
   "license": "MIT",
