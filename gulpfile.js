@@ -18,7 +18,7 @@ var reload          = browserSync.reload;
 var stream          = browserSync.stream;
 
 gulp.task ('sass', function () {
-  return  gulp.src ('./src/scss/ui-card.scss')
+  return  gulp.src ('./src/scss/angular-ui-card.scss')
           .pipe (plumber())
           .pipe (sassGlob())
           .pipe (sass().on('error', sass.logError))
