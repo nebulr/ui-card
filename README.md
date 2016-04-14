@@ -8,8 +8,8 @@ This is an angular implementation of [http://jessepollak.github.io/card/](http:/
 
 # Add files
 ```
-<link rel="stylesheet" href="bower_components/ui-card/dist/ui-card.css"/>
-<script src="bower_components/ui-card/dist/ui.card.js"></script>
+<link rel="stylesheet" href="bower_components/angular-ui-card/dist/angular-ui-card.css"/>
+<script src="bower_components/angular-ui-card/dist/angular-ui-card.js"></script>
 ```
 #Usage
 Add the module dependency to your project like so :
