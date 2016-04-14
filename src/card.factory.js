@@ -54,7 +54,7 @@ function CardFactory (QJ, Payment) {
     };
 
     function Card(opts) {
-      this.options = extend(true, this.defaults, opts);
+      this.options = angular.merge(this.defaults, opts);
       if (!this.options.form) {
         console.log("Please provide a form");
         return;
@@ -64,7 +64,7 @@ function CardFactory (QJ, Payment) {
         console.log("Please provide a container");
         return;
       }
-      this.$container = QJ(this.options.container);
+      this.$container = new QJ(this.options.container);
       this.render();
       this.attachHandlers();
       this.handleInitialPlaceholders();
@@ -72,7 +72,7 @@ function CardFactory (QJ, Payment) {
 
     Card.prototype.render = function() {
       var $cardContainer, baseWidth, name, obj, ref, ref1, selector, ua;
-      QJ.append(this.$container, this.template(this.cardTemplate, extend({}, this.options.messages, this.options.placeholders)));
+      QJ.append(this.$container, this.template(this.cardTemplate, angular.extend({}, this.options.messages, this.options.placeholders)));
       ref = this.options.cardSelectors;
       for (name in ref) {
         selector = ref[name];

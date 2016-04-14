@@ -8,4 +8,12 @@ angular
 
 function AppController ($scope) {
 
+  $scope.card = {};
+  $scope.$watch ('card', function () {
+      console.log ($scope.card);
+  }, true);
+
+  $scope.submit = function () {
+    alert ('Submitted the form!');
+  };
 }

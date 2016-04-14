@@ -5,7 +5,7 @@ angular
   .factory ('Payment', PaymentFactory);
 
 /* @ngInject */
-function PaymentFactory (Util, QJ) {
+function PaymentFactory (QJ) {
 
   var self = this;
 
@@ -160,7 +160,7 @@ function PaymentFactory (Util, QJ) {
         var target, value;
         target = e.target;
         value = QJ.val(target);
-        value = Payment.fns.formatCardNumber(value);
+        value = self.fns.formatCardNumber(value);
         return QJ.val(target, value);
       };
     })(this));
@@ -396,7 +396,7 @@ function PaymentFactory (Util, QJ) {
     var allTypes, card, cardType, target, val;
     target = e.target;
     val = QJ.val(target);
-    cardType = Payment.fns.cardType(val) || 'unknown';
+    cardType = self.fns.cardType(val) || 'unknown';
     if (!QJ.hasClass(target, cardType)) {
       allTypes = (function() {
         var i, len, results;
@@ -530,7 +530,7 @@ function PaymentFactory (Util, QJ) {
 
   self.formatCardExpiry = function(el) {
     var month, year;
-    Payment.restrictNumeric(el);
+    self.restrictNumeric(el);
     if (el.length && el.length === 2) {
       month = el[0], year = el[1];
       this.formatCardExpiryMultiple(month, year);

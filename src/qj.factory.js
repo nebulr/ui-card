@@ -6,7 +6,9 @@ angular
 
 /* @ngInject */
 function QJFactory () {
-  var QJ = function(selector) {
+  var QJ, rreturn, rtrim;
+
+  QJ = function(selector) {
     if (QJ.isDOMElement(selector)) {
       return selector;
     }

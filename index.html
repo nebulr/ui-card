@@ -24,12 +24,48 @@
     </section>
 
     <section class="main-content">
+
+      <p>This is an angular implementation of <a href="http://jessepollak.github.io/card/" target="_blank">http://jessepollak.github.io/card/</a> This requires no dependencies and written entirely in angular! ( That means no card install or jquery install necessary )</p>
+
       <h1>
-      <a id="uicard" class="anchor" href="#uicard" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ui.card</h1>
+      <a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h1>
 
-      <p>A better credit card form in one line of code for angular js</p>
+      <p><code>bower install ui.card</code>
 
-      <card></card>
+      <h1>
+      <a id="add-files" class="anchor" href="#add-files" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add files</h1>
+
+      <pre><code>&lt;link rel="stylesheet" href="bower_components/ui-swiper/dist/ui-swiper.css"/&gt;
+      &lt;script src="bower_components/ui-swiper/dist/ui-swiper.js"&gt;&lt;/script&gt;
+      </code></pre>
+
+      <h1>
+      <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+
+      <p>Add the module dependency to your project
+      <code>angular.module('app', ['ui.card']);</code></p>
+
+      <p>Sample Usage :</p>
+
+      <pre>
+        <code>
+          &lt;card ng-submit="submit()" options="{}" disable="false"&gt;
+            &lt;input card-number placeholder="Card number" type="text"&gt;
+            &lt;input card-name placeholder="Full name" type="text"&gt;&lt;br&gt;
+            &lt;input card-expiry placeholder="MM/YY" type="text"&gt;
+            &lt;input card-cvc placeholder="CVC" type="text"&gt;
+            &lt;button type="submit"&gt;Submit&lt;/button&gt;
+          &lt;card/&gt;
+        </code>
+      </pre>
+
+      <card role="form" ng-submit="submit()" options="{}" disable="false">
+          <input card-number placeholder="Card number" type="text" ng-model="card.number" />
+          <input card-name placeholder="Full name" type="text"  ng-model="card.name" /><br>
+          <input card-expiry placeholder="MM/YYYY" type="text" ng-model="card.expiry" />
+          <input card-cvc placeholder="CVC" type="text" ng-model="card.cvc" />
+          <button type="submit">Submit</button>
+      </card>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/nebulr/ui.card">ui.card</a> is maintained by <a href="https://github.com/nebulr">nebulr</a>.</span>
