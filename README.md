@@ -4,7 +4,7 @@ A better credit card form in one line of code for angular js
 This is an angular implementation of [http://jessepollak.github.io/card/](http://jessepollak.github.io/card/) This requires no dependencies and written entirely in angular! ( That means no card install or jquery install necessary ) For options usage and ability just look at that page.
 
 # Install
-`bower install ui.card`
+`bower install angular-ui-card`
 
 # Add files
 ```
