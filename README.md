@@ -28,4 +28,4 @@ Sample Usage :
 <card/>
 ```
 
-You can see it in action on the [demo page](http://nebulr.github.io/ui.card/)
+You can see it in action on the [demo page](http://nebulr.github.io/ui-card/)
