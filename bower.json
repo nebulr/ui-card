@@ -6,8 +6,8 @@
   ],
   "description": "A better credit card form in one line of code for angular js",
   "main": [
-    "dist/angular-ui-card.min.js",
-    "dist/angular-ui-card.min.css"
+    "dist/angular-ui-card.js",
+    "dist/angular-ui-card.css"
   ],
   "keywords": [
     "card",
