@@ -54,7 +54,7 @@ function CardFactory (QJ, Payment) {
     };
 
     function Card(opts) {
-      this.options = angular.merge(this.defaults, opts);
+      this.options = angular.extend(this.defaults, opts);
       if (!this.options.form) {
         console.log("Please provide a form");
         return;

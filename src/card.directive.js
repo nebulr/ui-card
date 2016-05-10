@@ -13,7 +13,7 @@ angular
 function CardController ($scope) {}
 
 /* @ngInject */
-function CardDirective (Card) {
+function CardDirective (Card, $timeout) {
   return {
     restrict : 'E',
     template : '<form>' +
@@ -29,18 +29,17 @@ function CardDirective (Card) {
     controller : 'CardController',
     controllerAs : 'self',
     link : function ($scope, $element, $attributes) {
-
       $scope.uuid = generateUUID();
 
-      angular.element($element.children()[0]).addClass($scope.uuid);
+      angular.element($element).addClass($scope.uuid);
 
       var options = {
           // a selector or DOM element for the form where users will
           // be entering their information
-          form: 'form', // *required*
+          form: 'form.' + $scope.uuid, // *required*
           // a selector or DOM element for the container
           // where you want the card to appear
-          container: '.' + $scope.uuid, // *required*
+          container: '.' + $scope.uuid + ' div.card-wrapper' , // *required*
 
           // Default placeholders for rendered fields - optional
           placeholders: {
@@ -55,7 +54,10 @@ function CardDirective (Card) {
       };
       angular.extend (options, $scope.options);
 
-      var card = new Card(options);
+      // Need to add this so can wait for dialog to load before rendering
+      $timeout(function () {
+        var card = new Card(options);
+      }, 0);
 
     }
   };

@@ -11,7 +11,8 @@ var minifyCss       = require ('gulp-cssnano');
 var uglify          = require ('gulp-uglify');
 var plumber         = require ('gulp-plumber');
 var concat          = require ('gulp-concat');
-var gutil           = require ('gulp-util')
+var rename          = require ('gulp-rename');
+var gutil           = require ('gulp-util');
 
 var browserSync     = require('browser-sync').create();
 var reload          = browserSync.reload;
@@ -22,8 +23,17 @@ gulp.task ('sass', function () {
           .pipe (plumber())
           .pipe (sassGlob())
           .pipe (sass().on('error', sass.logError))
-          .pipe (minifyCss({discardComments: {removeAll: true}}))
           .pipe (gulp.dest('./dist/'));
+});
+
+gulp.task ('sass:production', function () {
+    return  gulp.src ('./src/scss/angular-ui-card.scss')
+            .pipe (rename('angular-ui-card.min.css'))
+            .pipe (plumber())
+            .pipe (sassGlob())
+            .pipe (sass().on('error', sass.logError))
+            .pipe (minifyCss({discardComments: {removeAll: true}}))
+            .pipe (gulp.dest('./dist/'));
 });
 
 gulp.task ('js', function () {
@@ -32,8 +42,17 @@ gulp.task ('js', function () {
           .pipe (ngAnnotate().on('error', gutil.log))
           .pipe (angularFilesort())
           .pipe (concat('angular-ui-card.js'))
-          .pipe (uglify().on('error', gutil.log))
           .pipe (gulp.dest('./dist/'));
+});
+
+gulp.task ('js:production', function () {
+    return  gulp.src ('./src/**/*.js')
+            .pipe (plumber())
+            .pipe (ngAnnotate().on('error', gutil.log))
+            .pipe (angularFilesort())
+            .pipe (concat('angular-ui-card.min.js'))
+            .pipe (uglify().on('error', gutil.log))
+            .pipe (gulp.dest('./dist/'));
 });
 
 // **********************************************************************
@@ -75,5 +94,5 @@ gulp.task('serve', ['default'], function() {
 
 });
 
-gulp.task ('default', ['sass', 'js']);
+gulp.task ('default', ['sass', 'sass:production', 'js', 'js:production']);
 gulp.task ('build', ['default']);
