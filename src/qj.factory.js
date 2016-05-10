@@ -12,10 +12,7 @@ function QJFactory () {
     if (QJ.isDOMElement(selector)) {
       return selector;
     }
-    console.log (selector);
-    var el = document.querySelector(selector);
-    console.log (el);
-    return el;
+    return document.querySelector(selector);
   };
 
   QJ.isDOMElement = function(el) {
