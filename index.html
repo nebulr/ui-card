@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/angular-material.min.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
 
-    <link rel="stylesheet" href="./dist/angular-ui-card.css" />
     <script src="./js/angular.js"></script>
+    <script src="./js/angular-aria.min.js"></script>
+    <script src="./js/angular-animate.js"></script>
+    <script src="./js/angular-material.min.js"></script>
+
+    <link rel="stylesheet" href="./dist/angular-ui-card.css" />
     <script src="./dist/angular-ui-card.js"></script>
+
     <script src="./js/app.js"></script>
   </head>
   <body ng-app="app" ng-controller="AppController">
@@ -67,6 +73,21 @@
           <button type="submit">Submit</button>
       </card>
 
+      <script type="text/ng-template" id="dialog1.tmpl.html">
+        <md-dialog aria-label="Card"  ng-cloak>
+          <card role="form" ng-submit="submit()" options="{}" disable="false">
+              <input card-number placeholder="Card number" type="text" ng-model="card.number" />
+              <input card-name placeholder="Full name" type="text"  ng-model="card.name" /><br>
+              <input card-expiry placeholder="MM/YYYY" type="text" ng-model="card.expiry" />
+              <input card-cvc placeholder="CVC" type="text" ng-model="card.cvc" />
+              <button type="submit">Submit</button>
+          </card>
+        </md-dialog>
+      </script>
+      <br/>
+      <md-content>
+        <md-button class="md-raised md-primary" ng-click="showAdvanced()">Open up a dialog</md-button>
+      </md-content>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/nebulr/ui.card">ui.card</a> is maintained by <a href="https://github.com/nebulr">nebulr</a>.</span>
       </footer>
