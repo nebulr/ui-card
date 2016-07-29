@@ -20,10 +20,10 @@ Sample Usage :
 
 ```
 <card ng-submit="submit()" options="{}" disable="false">
-  <input card-number placeholder="Card number" type="text">
-  <input card-name placeholder="Full name" type="text"><br>
-  <input card-expiry placeholder="MM/YY" type="text">
-  <input card-cvc placeholder="CVC" type="text">
+  <input card-number ng-model="credit.number" placeholder="Card number" type="text">
+  <input card-name ng-model="credit.name" placeholder="Full name" type="text"><br>
+  <input card-expiry ng-model="credit.expiry" placeholder="MM/YY" type="text">
+  <input card-cvc ng-model="credit.cvc" placeholder="CVC" type="text">
   <button type="submit">Submit</button>
 <card/>
 ```

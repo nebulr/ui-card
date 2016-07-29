@@ -56,10 +56,10 @@
       <pre>
         <code>
           &lt;card ng-submit="submit()" options="{}" disable="false"&gt;
-            &lt;input card-number placeholder="Card number" type="text"&gt;
-            &lt;input card-name placeholder="Full name" type="text"&gt;&lt;br&gt;
-            &lt;input card-expiry placeholder="MM/YY" type="text"&gt;
-            &lt;input card-cvc placeholder="CVC" type="text"&gt;
+            &lt;input card-number ng-model="credit.number" placeholder="Card number" type="text"&gt;
+            &lt;input card-name ng-model="credit.name" placeholder="Full name" type="text"&gt;&lt;br&gt;
+            &lt;input card-expiry ng-model="credit.expiry" placeholder="MM/YY" type="text"&gt;
+            &lt;input card-cvc ng-model="credit.cvc" placeholder="CVC" type="text"&gt;
             &lt;button type="submit"&gt;Submit&lt;/button&gt;
           &lt;card/&gt;
         </code>
