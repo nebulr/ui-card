@@ -16,7 +16,7 @@ function CardController ($scope) {}
 function CardDirective (Card, $timeout) {
   return {
     restrict : 'E',
-    template : '<form>' +
+    template : '<form name="card">' +
     '<div class="card-wrapper"></div>' +
     '<fieldset ng-transclude class="form-wrapper" ng-disabled="disable"></fielset>' +
     '</form>',
