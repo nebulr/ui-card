@@ -25,7 +25,7 @@ Sample Usage :
   <input card-expiry ng-model="credit.expiry" placeholder="MM/YY" type="text">
   <input card-cvc ng-model="credit.cvc" placeholder="CVC" type="text">
   <button type="submit">Submit</button>
-<card/>
+</card>
 ```
 
 You can see it in action on the [demo page](http://nebulr.github.io/ui-card/)
